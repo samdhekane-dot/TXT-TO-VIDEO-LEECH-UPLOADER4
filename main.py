@@ -73,23 +73,6 @@ def force_subscribe(func):
         await func(bot, message)
     return wrapper
 
-# Enhanced URL validation function
-def is_valid_url(url):
-    """Check if URL is valid and accessible"""
-    url_pattern = re.compile(
-        r'^https?://'  # http:// or https://
-        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,6}\.?|'  # domain...
-        r'localhost|'  # localhost...
-        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'  # ...or ip
-        r'(?::\d+)?'  # optional port
-        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
-    return url_pattern.match(url) is not None
-
-def extract_url_from_line(line):
-    """Extract and validate URL from a line of text"""
-    line = line.strip()
-    if not line:
-        return None, None
     
     # Try to find URL in the line
     url_match = re.search(r'https?://[^\s]+', line)
