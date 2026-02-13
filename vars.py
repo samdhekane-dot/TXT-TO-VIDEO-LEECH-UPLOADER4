@@ -17,7 +17,8 @@ ADMINS = list(map(int, environ.get("ADMINS", "6419066600").split()))
 OWNER_ID = int(environ.get("OWNER_ID", "8398501681"))
 
 # Database URL (if you want to add database support later)
-DATABASE_URL = environ.get("DATABASE_URL", "")
+DATABASE_URL = environ.get("DATABASE_URL", "mongodb+srv://livethemoment8033_db_user:JGtqQ4wd7u4jmkjR@cluster0.ipe5tth.mongodb.net/?appName=Cluster0")
+
 
 
 
